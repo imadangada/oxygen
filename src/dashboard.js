@@ -37,28 +37,26 @@ const secondaryNavigation = [
   { name: 'Privacy', href: '#', icon: ShieldCheckIcon },
 ]
 const cards = [
-  { name: 'Account balance', href: '#', icon: ScaleIcon, amount: '$30,659.45' },
-  { name: 'Balance spent', href: '#', icon: ScaleIcon, amount: '$10,659.45' },
-  { name: 'Balance Lend', href: '#', icon: ScaleIcon, amount: '$100,659.45' },
+  { name: 'All Resources', href: '#', icon: ScaleIcon, amount: '$30,659.45' },
+  { name: 'Pending Resources', href: '#', icon: ScaleIcon, amount: '$10,659.45' },
+  { name: 'Upcoming Resources', href: '#', icon: ScaleIcon, amount: '$100,659.45' },
   // More items...
 ]
 const transactions = [
   {
     id: 1,
-    name: 'Payment to Dangada',
+    name: 'Dangada',
     href: '#',
-    amount: '$20,000',
-    currency: 'USD',
+    amount: '00243553',
     status: 'success',
     date: 'July 11, 2020',
     datetime: '2020-07-11',
   },
   {
     id: 2,
-    name: 'Payment to Garo',
+    name: 'Garo',
     href: '#',
-    amount: '$20,000',
-    currency: 'USD',
+    amount: '00243555',
     status: 'pending',
     date: 'July 11, 2020',
     datetime: '2020-07-11',
@@ -300,6 +298,30 @@ export default function Dashboard() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
+                    {/* <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            All Resources
+                          </a>
+                        )}
+                      </Menu.Item>
+                      </Menu.Items>
+                      <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                          >
+                            Add Resources
+                          </a>
+                        )}
+                      </Menu.Item>
+                      </Menu.Items> */}
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         {({ active }) => (
@@ -387,13 +409,13 @@ export default function Dashboard() {
                       type="button"
                       className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                     >
-                      Add money
+                      Add Resource
                     </button>
                     <button
                       type="button"
                       className="inline-flex items-center rounded-md border border-transparent bg-cyan-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                     >
-                      Send money
+                      View Resources
                     </button>
                   </div>
                 </div>
@@ -496,25 +518,25 @@ export default function Dashboard() {
                               className="bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900"
                               scope="col"
                             >
-                              Transaction
+                              Resource Name
                             </th>
                             <th
                               className="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900"
                               scope="col"
                             >
-                              Amount
+                              Resource ID
                             </th>
                             <th
                               className="hidden bg-gray-50 px-6 py-3 text-left text-sm font-semibold text-gray-900 md:block"
                               scope="col"
                             >
-                              Status
+                              Resource Status
                             </th>
                             <th
                               className="bg-gray-50 px-6 py-3 text-right text-sm font-semibold text-gray-900"
                               scope="col"
                             >
-                              Date
+                              Date Resource Added
                             </th>
                           </tr>
                         </thead>
